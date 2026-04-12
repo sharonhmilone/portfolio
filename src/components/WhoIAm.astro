@@ -1,62 +1,51 @@
 ---
-// Who I Am — two-column layout, photo left, content right
-// Photo: public/images/sharon.jpg (extract from Quietly HTML if not yet done)
+// Who I Am — Quietly-style full-bleed two-column layout
+// Photo fills left half, content right, min-height 80vh
 ---
 
 <section id="about">
-  <div class="who-grid">
+  <div class="who-inner">
 
-    <!-- Photo column -->
-    <div class="who-photo-col reveal">
-      <div class="who-photo-wrap">
-        <img
-          src="/portfolio/images/sharon.jpg"
-          alt="Sharon Hadden Milone"
-          class="who-photo"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+    <div class="who-photo">
+      <img
+        src="/portfolio/images/sharon.jpg"
+        alt="Sharon Hadden Milone"
+        loading="lazy"
+        decoding="async"
+      />
     </div>
 
-    <!-- Content column -->
-    <div class="who-content reveal delay-1">
-      <span class="section-label">Who I Am</span>
+    <div class="who-content reveal">
+      <span class="section-label">Meet Sharon</span>
 
-      <h2 class="who-title">
-        Content strategist.<br />
-        <em>Systems thinker.</em>
+      <h2 class="who-headline">
+        Who I <em>Am</em>
       </h2>
 
-      <div class="who-body">
-        <p>
-          I build content programs that scale — with or without AI. My work sits at
-          the intersection of editorial strategy, systems design and emerging
-          technology, and I bring the same rigour to a 50-word social caption as to
-          a full-stack content operations architecture.
-        </p>
-        <p>
-          Over the last decade I've led content at fintech companies, AI data
-          platforms and independent publications — writing for audiences from
-          small-business owners to enterprise buyers to the general public. I've
-          also held editorial leadership roles, including Editor in Chief of
-          Digital Entrepreneur.
-        </p>
-        <p>
-          I'm currently deepening my practice in AI-native content systems:
-          building pipelines that combine Claude, Supabase, and human editorial
-          judgment into something more durable than either alone.
-        </p>
-      </div>
+      <p class="who-intro">
+        Most people can be described as either a thinker or a builder, but I'm
+        unusually comfortable as both. My career includes stops as a writer, a
+        strategist, an educator, a thought leader. I love my non-linear path,
+        and what my resume can't show you is:
+      </p>
 
-      <ul class="who-bullets">
-        <li><span class="bullet-label">Based in</span> Victoria, BC · open to remote</li>
-        <li><span class="bullet-label">Background</span> Journalism, digital marketing, editorial ops</li>
-        <li><span class="bullet-label">Currently</span> Building AI-native content systems</li>
-        <li><span class="bullet-label">Connect</span>
-          <a href="https://www.linkedin.com/in/sharonmilone" target="_blank" rel="noopener">LinkedIn →</a>
-        </li>
+      <ul class="who-list">
+        <li>My Myers-Briggs is ENFJ</li>
+        <li>I've been in rooms where people like Jensen Huang and President Obama had my attention</li>
+        <li>I was a licensed cosmetologist</li>
+        <li>I'm obsessed with all things health and wellness</li>
+        <li>I've been an entrepreneur since I was 7 years old</li>
+        <li>I'm a champion of joy</li>
       </ul>
+
+      <a
+        href="https://www.linkedin.com/in/sharonmilone"
+        target="_blank"
+        rel="noopener"
+        class="who-link"
+      >
+        Connect on LinkedIn →
+      </a>
     </div>
 
   </div>
@@ -65,124 +54,119 @@
 <style>
 section {
   background: var(--warm-white);
+  padding: 0; /* who-inner handles all spacing */
 }
 
-.who-grid {
+.who-inner {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 5rem;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
 }
 
-/* Photo */
-.who-photo-wrap {
-  position: sticky;
-  top: calc(var(--nav-h) + 2rem);
-  border: 1px solid var(--border);
+/* Photo — fills left column completely */
+.who-photo {
+  position: relative;
   overflow: hidden;
 }
 
-.who-photo {
+.who-photo img {
   width: 100%;
-  height: auto;
-  display: block;
-  aspect-ratio: 3 / 4;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
-  filter: grayscale(18%);
-  transition: filter 0.4s;
+  display: block;
 }
 
-.who-photo-wrap:hover .who-photo {
-  filter: grayscale(0%);
+/* Content — right column, vertically centered */
+.who-content {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Content */
-.who-title {
+.who-headline {
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-size: clamp(2.8rem, 4vw, 4rem);
   font-weight: 300;
+  line-height: 1.1;
   color: var(--ink);
-  line-height: 1.2;
-  margin-top: 1.2rem;
-  margin-bottom: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
-.who-title em {
+.who-headline em {
   font-style: italic;
   color: var(--rose-deep);
 }
 
-.who-body {
-  max-width: 560px;
-  margin-bottom: 2.4rem;
-}
-
-.who-body p {
-  font-size: 0.93rem;
+.who-intro {
+  font-size: 0.97rem;
   color: var(--ink-soft);
-  line-height: 1.88;
-  font-weight: 300;
+  line-height: 1.85;
+  margin-bottom: 2rem;
 }
 
-.who-body p + p {
-  margin-top: 1rem;
-}
-
-/* Bullets */
-.who-bullets {
+/* Bullet list — dot marker via ::before */
+.who-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
-  border-top: 1px solid var(--border);
-  padding-top: 1.6rem;
+  gap: 0.75rem;
+  margin-bottom: 2.4rem;
 }
 
-.who-bullets li {
-  font-size: 0.85rem;
+.who-list li {
+  font-size: 0.92rem;
   color: var(--ink-soft);
   line-height: 1.5;
+  padding-left: 1.4rem;
+  position: relative;
 }
 
-.bullet-label {
-  display: inline-block;
-  font-size: 0.62rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+.who-list li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--rose-deep);
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.who-link {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-muted);
-  min-width: 110px;
-  margin-right: 0.4rem;
-}
-
-.who-bullets a {
   color: var(--rose-deep);
   text-decoration: none;
   border-bottom: 1px solid rgba(181, 112, 106, 0.3);
-  padding-bottom: 0.1rem;
+  padding-bottom: 0.18rem;
+  align-self: flex-start;
   transition: color 0.2s, border-color 0.2s;
 }
 
-.who-bullets a:hover {
+.who-link:hover {
   color: var(--rose-mid);
   border-color: var(--rose-mid);
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .who-grid {
+@media (max-width: 860px) {
+  .who-inner {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    min-height: unset;
   }
 
-  .who-photo-wrap {
-    position: static;
-    max-width: 280px;
+  .who-photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .who-content {
+    padding: 3.5rem 2.5rem;
   }
 }
 
-@media (max-width: 640px) {
-  .who-photo-wrap { max-width: 100%; }
+@media (max-width: 480px) {
+  .who-content { padding: 2.5rem 1.5rem; }
 }
 </style>

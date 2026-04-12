@@ -8,25 +8,22 @@
   <span class="section-label">Content Systems</span>
   <h2 class="section-title">The work <em>behind</em> the work</h2>
   <p class="section-intro reveal">
-    Two systems I built to solve real editorial problems — designed for quality
+    Two systems I built to solve real editorial problems, designed for quality
     and repeatability, with human judgment at every decision point that matters.
   </p>
 
   <!-- ── SYSTEM 01: Editorial Operations ── -->
   <div class="system reveal" id="system1">
     <div class="system-header">
-      <div class="sys-num">01</div>
-      <div class="sys-meta">
-        <span class="sys-label">System 01</span>
-        <h3 class="sys-name">The Editorial Operations System</h3>
-        <p class="sys-sub">Contributor to Published — Automated End-to-End</p>
-      </div>
+      <span class="sys-label">System 01</span>
+      <h3 class="sys-name">The Editorial Operations System</h3>
+      <p class="sys-sub">Contributor to Published, Automated End-to-End</p>
     </div>
 
     <div class="body-text">
-      <p>This system solved a specific problem: how do you manage a growing contributor pipeline across outreach, pitching, onboarding, production and payment — with a small team and no room for things to fall through the cracks?</p>
-      <p>I architected a multi-board Asana environment connecting every stage of the contributor lifecycle. From the moment a potential contributor is identified, through application, pitch review, onboarding, article production, editorial approval and payment — the system routes, notifies and tracks with minimal manual intervention.</p>
-      <p>The design was intentional: human judgment at the decision points that matter (application review, pitch approval, editorial sign-off), automation everywhere else. AI handles the first touchpoint at outreach, pitch screening and generating the content brief, reducing cognitive load while keeping editorial standards high. A learning loop — the Gold Standard Library — continuously refines the AI screener's discernment based on pitches that make it to published drafts.</p>
+      <p>This system solved a specific problem: how do you manage a growing contributor pipeline across outreach, pitching, onboarding, production and payment, with a small team and no room for things to fall through the cracks?</p>
+      <p>I architected a multi-board Asana environment connecting every stage of the contributor lifecycle. From the moment a potential contributor is identified, through application, pitch review, onboarding, article production, editorial approval and payment, the system routes, notifies and tracks with minimal manual intervention.</p>
+      <p>The design was intentional: human judgment at the decision points that matter (application review, pitch approval, editorial sign-off), automation everywhere else. AI handles the first touchpoint at outreach, pitch screening and generating the content brief, reducing cognitive load while keeping editorial standards high. A learning loop, the Gold Standard Library, continuously refines the AI screener's discernment based on pitches that make it to published drafts.</p>
     </div>
 
     <div class="diagram-block reveal delay-1">
@@ -176,21 +173,18 @@
   <!-- ── SYSTEM 02: Editorial Intelligence Engine ── -->
   <div class="system reveal" id="system2">
     <div class="system-header">
-      <div class="sys-num">02</div>
-      <div class="sys-meta">
-        <span class="sys-label">System 02</span>
-        <div class="sys-name-row">
-          <h3 class="sys-name">The Editorial Intelligence Engine</h3>
-          <span class="in-progress-badge">✦ In progress</span>
-        </div>
-        <p class="sys-sub">AI-Native Content Cycle — From Brief to Published</p>
+      <span class="sys-label">System 02</span>
+      <div class="sys-name-row">
+        <h3 class="sys-name">The Editorial Intelligence Engine</h3>
+        <span class="in-progress-badge">✦ In progress</span>
       </div>
+      <p class="sys-sub">AI-Native Content Cycle, From Brief to Published</p>
     </div>
 
     <div class="body-text">
       <p>Where System 01 layers AI onto existing infrastructure, System 02 is built AI-first from the ground up. It's a bespoke Next.js application designed around a single editorial principle: AI initiates, humans decide and the system learns.</p>
-      <p>Content briefs are generated weekly from Claude API calls to a live editorial context document maintained in Supabase. Briefs surface in a clean dashboard for editorial review where they can be approved, rejected or refined. Approved briefs trigger the generation of a first draft — which then goes through inline editorial review, with the system capturing the differential between its version and the final edit. Every piece of editorial feedback becomes a learning signal.</p>
-      <p>This learning loop is the architectural centrepiece. The quality threshold is set based on the brief-to-publish rate, and this context gets incorporated into the editorial context document to improve future prompts — ensuring the system genuinely improves from editorial judgment over time.</p>
+      <p>Content briefs are generated weekly from Claude API calls to a live editorial context document maintained in Supabase. Briefs surface in a clean dashboard for editorial review where they can be approved, rejected or refined. Approved briefs trigger the generation of a first draft, which then goes through inline editorial review, with the system capturing the differential between its version and the final edit. Every piece of editorial feedback becomes a learning signal.</p>
+      <p>This learning loop is the architectural centrepiece. The quality threshold is set based on the brief-to-publish rate, and this context gets incorporated into the editorial context document to improve future prompts, ensuring the system genuinely improves from editorial judgment over time.</p>
     </div>
 
     <div class="diagram-block reveal delay-1">
@@ -316,23 +310,8 @@ section {
 }
 
 .system-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.6rem;
   margin-bottom: 2rem;
 }
-
-.sys-num {
-  font-family: var(--serif);
-  font-size: 5rem;
-  font-weight: 300;
-  color: var(--rose-blush);
-  line-height: 1;
-  flex-shrink: 0;
-  user-select: none;
-}
-
-.sys-meta { padding-top: 0.5rem; }
 
 .sys-label {
   display: block;
