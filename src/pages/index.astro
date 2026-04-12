@@ -1,7 +1,7 @@
 ---
-import Base          from "../layouts/Base.astro";
-import Nav           from "../components/Nav.astro";
-import Hero          from "../components/Hero.astro";
+import Base           from "../layouts/Base.astro";
+import Nav            from "../components/Nav.astro";
+import Hero           from "../components/Hero.astro";
 import SystemsSection from "../components/SystemsSection.astro";
 import ResultsSection from "../components/ResultsSection.astro";
 import WritingSamples from "../components/WritingSamples.astro";
@@ -28,52 +28,13 @@ const { meta, nav, hero } = config;
       headline={hero.headline}
       tagline={hero.tagline}
     />
-
-    <div class="section-wrapper" id="systems-wrapper">
-      <SystemsSection />
-    </div>
-
-    <div class="section-wrapper" id="results-wrapper">
-      <ResultsSection />
-    </div>
-
-    <div class="section-wrapper" id="writing-wrapper">
-      <WritingSamples />
-    </div>
-
-    <div class="section-wrapper" id="watch-wrapper">
-      <VideoSection />
-    </div>
-
+    <SystemsSection />
+    <ResultsSection />
+    <WritingSamples />
+    <VideoSection />
     <LogoStrip />
-
-    <div class="section-wrapper" id="about-wrapper">
-      <WhoIAm />
-    </div>
+    <WhoIAm />
   </main>
 
   <Footer />
 </Base>
-
-<style>
-/* Give each section consistent vertical padding */
-.section-wrapper :global(section) {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  padding-left: var(--page-pad);
-  padding-right: var(--page-pad);
-}
-
-/* Systems gets a bit more breathing room */
-#systems-wrapper :global(section) {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-}
-
-@media (max-width: 768px) {
-  .section-wrapper :global(section) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-}
-</style>

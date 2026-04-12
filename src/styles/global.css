@@ -26,7 +26,9 @@
 
   /* Layout */
   --page-max:  1200px;
-  --page-pad:  clamp(1.4rem, 6vw, 96px);
+  /* Self-centering padding: equals half the viewport space outside --page-max.
+     On narrow screens the calc goes negative, so max() falls back to 1.5rem. */
+  --page-pad:  max(1.5rem, calc((100vw - var(--page-max)) / 2));
   --nav-h:     72px;
 }
 
@@ -40,6 +42,9 @@
 }
 
 html { scroll-behavior: smooth; }
+
+/* Offset anchor scroll targets so fixed nav doesn't cover headings */
+[id] { scroll-margin-top: var(--nav-h); }
 
 body {
   font-family: var(--sans);
