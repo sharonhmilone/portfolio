@@ -67,6 +67,16 @@ a   { color: inherit; }
   padding: 0 var(--page-pad);
 }
 
+/* Narrows content to 960px and centers within the 1200px page-max */
+.inner-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+main {
+  padding-top: var(--nav-h);
+}
+
 section {
   padding: 6rem var(--page-pad);
 }
