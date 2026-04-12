@@ -1,0 +1,110 @@
+---
+// Logo strip — "Published & featured in"
+// SVG wordmarks for Douglas, Databox, Digital Entrepreneur, iFundWomen, Promo, CMI
+---
+
+<section class="logo-strip" aria-label="Published and featured in">
+  <span class="strip-label">Published &amp; featured in</span>
+
+  <div class="logo-row">
+
+    <!-- Douglas Magazine -->
+    <a href="https://www.douglasmagazine.com" target="_blank" rel="noopener" class="logo-item" aria-label="Douglas Magazine">
+      <svg viewBox="0 0 160 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+        <text x="0" y="27" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="400" letter-spacing="2" fill="currentColor">DOUGLAS</text>
+      </svg>
+    </a>
+
+    <!-- Databox -->
+    <a href="https://databox.com" target="_blank" rel="noopener" class="logo-item" aria-label="Databox">
+      <svg viewBox="0 0 130 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+        <text x="0" y="26" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="0.5" fill="currentColor">databox</text>
+      </svg>
+    </a>
+
+    <!-- Digital Entrepreneur -->
+    <a href="https://www.digitalentrepreneur.com" target="_blank" rel="noopener" class="logo-item" aria-label="Digital Entrepreneur">
+      <svg viewBox="0 0 220 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+        <text x="0" y="14" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" letter-spacing="2.5" fill="currentColor">DIGITAL</text>
+        <text x="0" y="30" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" letter-spacing="2.5" fill="currentColor">ENTREPRENEUR</text>
+      </svg>
+    </a>
+
+    <!-- iFundWomen -->
+    <a href="https://www.ifundwomen.com" target="_blank" rel="noopener" class="logo-item" aria-label="iFundWomen">
+      <svg viewBox="0 0 155 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+        <text x="0" y="26" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="currentColor">i</text>
+        <text x="14" y="26" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="currentColor">FundWomen</text>
+      </svg>
+    </a>
+
+    <!-- Promo -->
+    <a href="https://promo.com" target="_blank" rel="noopener" class="logo-item" aria-label="Promo">
+      <svg viewBox="0 0 100 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+        <text x="0" y="26" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="1" fill="currentColor">promo</text>
+      </svg>
+    </a>
+
+    <!-- Content Marketing Institute -->
+    <a href="https://contentmarketinginstitute.com" target="_blank" rel="noopener" class="logo-item" aria-label="Content Marketing Institute">
+      <svg viewBox="0 0 55 36" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+        <rect x="0" y="4" width="28" height="28" rx="2" fill="currentColor" opacity="0.15"/>
+        <text x="4" y="23" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" fill="currentColor">CMI</text>
+      </svg>
+    </a>
+
+  </div>
+</section>
+
+<style>
+.logo-strip {
+  background: var(--warm-white);
+  padding: 3rem var(--page-pad);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.strip-label {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.22s;
+  opacity: 0.6;
+}
+
+.logo-item:hover {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.logo-item svg {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .logo-row { gap: 2rem; }
+  .logo-item svg { height: 22px; }
+}
+</style>

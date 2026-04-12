@@ -1,0 +1,424 @@
+---
+// System 01 = Co-Lab's System 02: Editorial Operations (Contributor Lifecycle)
+// System 02 = Co-Lab's System 03: Editorial Intelligence Engine (AI-native)
+---
+
+<section id="systems">
+  <span class="section-label">Content Systems</span>
+  <h2 class="section-title">The work <em>behind</em> the work</h2>
+  <p class="section-intro reveal">
+    Two systems I built to solve real editorial problems — designed for quality
+    and repeatability, with human judgment at every decision point that matters.
+  </p>
+
+  <!-- ── SYSTEM 01: Editorial Operations ── -->
+  <div class="system reveal" id="system1">
+    <div class="system-header">
+      <div class="sys-num">01</div>
+      <div class="sys-meta">
+        <span class="sys-label">System 01</span>
+        <h3 class="sys-name">The Editorial Operations System</h3>
+        <p class="sys-sub">Contributor to Published — Automated End-to-End</p>
+      </div>
+    </div>
+
+    <div class="body-text">
+      <p>This system solved a specific problem: how do you manage a growing contributor pipeline across outreach, pitching, onboarding, production and payment — with a small team and no room for things to fall through the cracks?</p>
+      <p>I architected a multi-board Asana environment connecting every stage of the contributor lifecycle. From the moment a potential contributor is identified, through application, pitch review, onboarding, article production, editorial approval and payment — the system routes, notifies and tracks with minimal manual intervention.</p>
+      <p>The design was intentional: human judgment at the decision points that matter (application review, pitch approval, editorial sign-off), automation everywhere else. AI handles the first touchpoint at outreach, pitch screening and generating the content brief, reducing cognitive load while keeping editorial standards high. A learning loop — the Gold Standard Library — continuously refines the AI screener's discernment based on pitches that make it to published drafts.</p>
+    </div>
+
+    <div class="diagram-block reveal delay-1">
+      <div class="diagram-label">System Architecture — Contributor Lifecycle Mapping</div>
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 1040 960" xmlns="http://www.w3.org/2000/svg"
+             style="width:100%;min-width:640px;height:auto;display:block;"
+             font-family="'DM Sans',sans-serif" font-size="11">
+          <defs>
+            <marker id="a" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+              <polygon points="0,0 7,3.5 0,7" fill="#c9908a"/>
+            </marker>
+            <marker id="ad" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+              <polygon points="0,0 7,3.5 0,7" fill="#c9908a" opacity="0.55"/>
+            </marker>
+            <marker id="ai-arr" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+              <polygon points="0,0 7,3.5 0,7" fill="#c4975a"/>
+            </marker>
+            <marker id="ai-arr-d" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+              <polygon points="0,0 7,3.5 0,7" fill="#c4975a" opacity="0.65"/>
+            </marker>
+          </defs>
+          <rect width="1040" height="960" fill="#fdf4f2"/>
+          <pattern id="g2" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#e8d8d4" opacity="0.55"/>
+          </pattern>
+          <rect width="1040" height="960" fill="url(#g2)"/>
+          <!-- KEY -->
+          <rect x="22" y="22" width="196" height="210" rx="9" fill="white" stroke="#e8c4bc" stroke-width="1.2"/>
+          <text x="120" y="48" text-anchor="middle" font-size="12" font-weight="500" fill="#2c2220">Key</text>
+          <ellipse cx="58" cy="82" rx="28" ry="17" fill="#3a6068"/>
+          <text x="98" y="77" font-size="10" fill="#5a4845">Action / Decision</text>
+          <text x="98" y="91" font-size="10" fill="#9a7c78">(human judgment)</text>
+          <ellipse cx="58" cy="124" rx="28" ry="17" fill="#7aafb8"/>
+          <text x="98" y="127" font-size="10" fill="#5a4845">Automation (Asana / Zapier)</text>
+          <ellipse cx="58" cy="164" rx="28" ry="17" fill="#b5706a" opacity="0.88"/>
+          <text x="98" y="167" font-size="10" fill="#5a4845">Email sequence (Flodesk)</text>
+          <ellipse cx="58" cy="204" rx="28" ry="17" fill="#c4975a"/>
+          <text x="98" y="207" font-size="10" fill="#5a4845">AI action</text>
+          <!-- ENTRY CIRCLE -->
+          <circle cx="120" cy="400" r="60" fill="#3a6068"/>
+          <text x="120" y="390" text-anchor="middle" fill="white" font-size="11">Application</text>
+          <text x="120" y="406" text-anchor="middle" fill="white" font-size="11">to contribute</text>
+          <text x="120" y="422" text-anchor="middle" fill="white" font-size="11">submitted</text>
+          <!-- CONTRIBUTOR MANAGEMENT BOARD -->
+          <rect x="238" y="210" width="262" height="516" rx="9" fill="#f5e6e2" stroke="#e8c4bc" stroke-width="1.2"/>
+          <text x="369" y="200" text-anchor="middle" font-size="9.5" font-weight="500" letter-spacing="0.13em" fill="#9a7c78">CONTRIBUTOR MANAGEMENT</text>
+          <ellipse cx="369" cy="270" rx="94" ry="30" fill="#3a6068"/>
+          <text x="369" y="265" text-anchor="middle" fill="white">Application</text>
+          <text x="369" y="282" text-anchor="middle" fill="white">approved</text>
+          <ellipse cx="322" cy="352" rx="80" ry="28" fill="#7aafb8"/>
+          <text x="322" y="347" text-anchor="middle" fill="white">Contributor Task</text>
+          <text x="322" y="364" text-anchor="middle" fill="white">created</text>
+          <ellipse cx="322" cy="434" rx="80" ry="28" fill="#7aafb8"/>
+          <text x="322" y="429" text-anchor="middle" fill="white">Pitch sub-task</text>
+          <text x="322" y="446" text-anchor="middle" fill="white">created</text>
+          <ellipse cx="369" cy="516" rx="88" ry="28" fill="#3a6068"/>
+          <text x="369" y="519" text-anchor="middle" fill="white">Pitch approved</text>
+          <ellipse cx="369" cy="592" rx="94" ry="28" fill="#3a6068"/>
+          <text x="369" y="587" text-anchor="middle" fill="white">Contributor approved</text>
+          <text x="369" y="603" text-anchor="middle" fill="white">&amp; onboarded</text>
+          <ellipse cx="369" cy="670" rx="90" ry="28" fill="#c4975a"/>
+          <text x="369" y="665" text-anchor="middle" fill="white">AI generates</text>
+          <text x="369" y="681" text-anchor="middle" fill="white">article brief</text>
+          <!-- ISSUE X BOARD -->
+          <rect x="554" y="210" width="244" height="278" rx="9" fill="#f5e6e2" stroke="#e8c4bc" stroke-width="1.2"/>
+          <text x="676" y="200" text-anchor="middle" font-size="9.5" font-weight="500" letter-spacing="0.13em" fill="#9a7c78">ISSUE X BOARD</text>
+          <ellipse cx="676" cy="262" rx="88" ry="30" fill="#7aafb8"/>
+          <text x="676" y="257" text-anchor="middle" fill="white">Pitch available</text>
+          <text x="676" y="273" text-anchor="middle" fill="white">for selection</text>
+          <ellipse cx="676" cy="344" rx="88" ry="30" fill="#3a6068"/>
+          <text x="676" y="339" text-anchor="middle" fill="white">Pitches selected</text>
+          <text x="676" y="355" text-anchor="middle" fill="white">as articles</text>
+          <ellipse cx="676" cy="428" rx="88" ry="30" fill="#3a6068"/>
+          <text x="676" y="423" text-anchor="middle" fill="white">Articles ready</text>
+          <text x="676" y="439" text-anchor="middle" fill="white">for publishing</text>
+          <!-- EDITORIAL CALENDAR BOARD -->
+          <rect x="852" y="210" width="168" height="258" rx="9" fill="#f5e6e2" stroke="#e8c4bc" stroke-width="1.2"/>
+          <text x="936" y="200" text-anchor="middle" font-size="9.5" font-weight="500" letter-spacing="0.13em" fill="#9a7c78">EDITORIAL CALENDAR</text>
+          <ellipse cx="936" cy="262" rx="72" ry="28" fill="#3a6068"/>
+          <text x="936" y="265" text-anchor="middle" fill="white">Issue X open</text>
+          <ellipse cx="936" cy="338" rx="72" ry="28" fill="#7aafb8"/>
+          <text x="936" y="341" text-anchor="middle" fill="white">Articles selected</text>
+          <ellipse cx="936" cy="416" rx="72" ry="28" fill="#7aafb8"/>
+          <text x="936" y="419" text-anchor="middle" fill="white">Articles complete</text>
+          <ellipse cx="936" cy="124" rx="72" ry="28" fill="#7aafb8"/>
+          <text x="936" y="119" text-anchor="middle" fill="white">Issue board</text>
+          <text x="936" y="135" text-anchor="middle" fill="white">created/detailed</text>
+          <!-- GOLD STANDARD LIBRARY -->
+          <rect x="852" y="536" width="168" height="76" rx="9" fill="#faf0de" stroke="#c4975a" stroke-width="1.5"/>
+          <text x="936" y="562" text-anchor="middle" font-size="11" font-weight="500" fill="#8b6b30">Gold Standard Library</text>
+          <text x="936" y="580" text-anchor="middle" font-size="9" fill="#c4975a" letter-spacing="0.08em">ASANA · TOP-SCORED PITCHES</text>
+          <!-- CONTRIBUTOR OUTREACH BOARD -->
+          <rect x="22" y="740" width="196" height="188" rx="9" fill="white" stroke="#e8c4bc" stroke-width="1.2" stroke-dasharray="5,3"/>
+          <text x="120" y="730" text-anchor="middle" font-size="9.5" font-weight="500" letter-spacing="0.13em" fill="#9a7c78">CONTRIBUTOR OUTREACH</text>
+          <text x="120" y="778" text-anchor="middle" font-size="10" fill="#5a4845">Track potential</text>
+          <text x="120" y="795" text-anchor="middle" font-size="10" fill="#5a4845">contributors to whom</text>
+          <text x="120" y="812" text-anchor="middle" font-size="10" fill="#5a4845">DE wants to reach out</text>
+          <ellipse cx="120" cy="886" rx="82" ry="28" fill="#c4975a"/>
+          <text x="120" y="881" text-anchor="middle" fill="white" font-size="10">AI drafts outreach</text>
+          <text x="120" y="897" text-anchor="middle" fill="white" font-size="10">from public profile</text>
+          <!-- PITCH RECEIPT BOARD -->
+          <rect x="408" y="740" width="220" height="204" rx="9" fill="#f5e6e2" stroke="#e8c4bc" stroke-width="1.2"/>
+          <text x="518" y="730" text-anchor="middle" font-size="9.5" font-weight="500" letter-spacing="0.13em" fill="#9a7c78">PITCH RECEIPT</text>
+          <ellipse cx="518" cy="790" rx="86" ry="28" fill="#3a6068"/>
+          <text x="518" y="793" text-anchor="middle" fill="white">Pitch submitted</text>
+          <ellipse cx="518" cy="896" rx="94" ry="30" fill="#c4975a"/>
+          <text x="518" y="891" text-anchor="middle" fill="white">AI pre-screens pitch</text>
+          <text x="518" y="907" text-anchor="middle" fill="white">scored summary</text>
+          <!-- FLODESK -->
+          <rect x="676" y="740" width="196" height="204" rx="9" fill="#e8c4bc" opacity="0.45" stroke="#c9908a" stroke-width="1.2"/>
+          <text x="774" y="730" text-anchor="middle" font-size="9.5" font-weight="500" letter-spacing="0.13em" fill="#b5706a">FLODESK</text>
+          <ellipse cx="774" cy="790" rx="82" ry="28" fill="#b5706a" opacity="0.88"/>
+          <text x="774" y="793" text-anchor="middle" fill="white">Invitation to pitch</text>
+          <ellipse cx="774" cy="896" rx="86" ry="30" fill="#b5706a" opacity="0.88"/>
+          <text x="774" y="899" text-anchor="middle" fill="white">Contributor onboarding</text>
+          <!-- ARROWS -->
+          <path d="M 178,386 C 206,356 240,284 276,282" stroke="#c9908a" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+          <line x1="344" y1="288" x2="332" y2="324" stroke="#c9908a" stroke-width="1.5" marker-end="url(#a)"/>
+          <line x1="322" y1="380" x2="322" y2="406" stroke="#c9908a" stroke-width="1.5" marker-end="url(#a)"/>
+          <path d="M 394,454 C 434,482 456,500 456,516" stroke="#c9908a" stroke-width="1.4" fill="none" marker-end="url(#a)"/>
+          <line x1="369" y1="544" x2="369" y2="564" stroke="#c9908a" stroke-width="1.5" marker-end="url(#a)"/>
+          <line x1="369" y1="620" x2="369" y2="642" stroke="#c4975a" stroke-width="1.6" marker-end="url(#ai-arr)"/>
+          <path d="M 456,516 C 498,490 530,294 588,274" stroke="#c9908a" stroke-width="1.4" fill="none" marker-end="url(#a)"/>
+          <line x1="676" y1="292" x2="676" y2="314" stroke="#c9908a" stroke-width="1.5" marker-end="url(#a)"/>
+          <line x1="676" y1="374" x2="676" y2="398" stroke="#c9908a" stroke-width="1.5" marker-end="url(#a)"/>
+          <path d="M 764,432 C 796,420 832,356 864,350" stroke="#c9908a" stroke-width="1.4" fill="none" marker-end="url(#a)"/>
+          <path d="M 936,152 L 936,210" stroke="#c9908a" stroke-width="1.4" fill="none" marker-end="url(#a)"/>
+          <path d="M 864,124 C 850,96 808,82 766,96" stroke="#c9908a" stroke-width="1.2" fill="none" stroke-dasharray="4,3" marker-end="url(#ad)"/>
+          <line x1="936" y1="366" x2="936" y2="388" stroke="#c9908a" stroke-width="1.5" marker-end="url(#a)"/>
+          <path d="M 462,592 C 500,660 518,720 518,762" stroke="#c9908a" stroke-width="1.4" fill="none" marker-end="url(#a)"/>
+          <line x1="518" y1="818" x2="518" y2="866" stroke="#c4975a" stroke-width="1.6" marker-end="url(#ai-arr)"/>
+          <path d="M 518,866 C 518,730 490,640 456,530" stroke="#c9908a" stroke-width="1.2" fill="none" stroke-dasharray="4,3" marker-end="url(#ad)"/>
+          <line x1="604" y1="790" x2="692" y2="790" stroke="#c9908a" stroke-width="1.5" marker-end="url(#a)"/>
+          <path d="M 692,890 C 590,890 490,770 462,606" stroke="#c9908a" stroke-width="1.2" fill="none" stroke-dasharray="4,3" marker-end="url(#ad)"/>
+          <path d="M 936,444 L 936,536" stroke="#c4975a" stroke-width="1.5" fill="none" stroke-dasharray="5,3" marker-end="url(#ai-arr)"/>
+          <path d="M 852,574 C 740,574 630,660 612,866" stroke="#c4975a" stroke-width="1.5" fill="none" stroke-dasharray="5,3" marker-end="url(#ai-arr)"/>
+          <text x="740" y="626" text-anchor="middle" font-size="9.5" fill="#c4975a" font-style="italic">Top-scored pitches →</text>
+          <text x="740" y="641" text-anchor="middle" font-size="9.5" fill="#c4975a" font-style="italic">screener calibration</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="sys-divider" aria-hidden="true"></div>
+
+  <!-- ── SYSTEM 02: Editorial Intelligence Engine ── -->
+  <div class="system reveal" id="system2">
+    <div class="system-header">
+      <div class="sys-num">02</div>
+      <div class="sys-meta">
+        <span class="sys-label">System 02</span>
+        <div class="sys-name-row">
+          <h3 class="sys-name">The Editorial Intelligence Engine</h3>
+          <span class="in-progress-badge">✦ In progress</span>
+        </div>
+        <p class="sys-sub">AI-Native Content Cycle — From Brief to Published</p>
+      </div>
+    </div>
+
+    <div class="body-text">
+      <p>Where System 01 layers AI onto existing infrastructure, System 02 is built AI-first from the ground up. It's a bespoke Next.js application designed around a single editorial principle: AI initiates, humans decide and the system learns.</p>
+      <p>Content briefs are generated weekly from Claude API calls to a live editorial context document maintained in Supabase. Briefs surface in a clean dashboard for editorial review where they can be approved, rejected or refined. Approved briefs trigger the generation of a first draft — which then goes through inline editorial review, with the system capturing the differential between its version and the final edit. Every piece of editorial feedback becomes a learning signal.</p>
+      <p>This learning loop is the architectural centrepiece. The quality threshold is set based on the brief-to-publish rate, and this context gets incorporated into the editorial context document to improve future prompts — ensuring the system genuinely improves from editorial judgment over time.</p>
+    </div>
+
+    <div class="diagram-block reveal delay-1">
+      <div class="diagram-label">System Architecture — AI-Native Editorial Pipeline</div>
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg"
+             style="width:100%;min-width:640px;height:auto;display:block;"
+             font-family="'DM Sans',sans-serif" font-size="11">
+          <defs>
+            <marker id="s3-a" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+              <polygon points="0,0 7,3.5 0,7" fill="#c9908a"/>
+            </marker>
+            <marker id="s3-ai" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+              <polygon points="0,0 7,3.5 0,7" fill="#c4975a"/>
+            </marker>
+            <marker id="s3-loop" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+              <polygon points="0,0 7,3.5 0,7" fill="#c4975a" opacity="0.7"/>
+            </marker>
+            <marker id="s3-slack" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+              <polygon points="0,0 7,3.5 0,7" fill="#7aafb8" opacity="0.8"/>
+            </marker>
+          </defs>
+          <rect width="1000" height="650" fill="#fdf4f2"/>
+          <pattern id="s3-dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="#e8d8d4" opacity="0.55"/>
+          </pattern>
+          <rect width="1000" height="650" fill="url(#s3-dots)"/>
+          <!-- KEY -->
+          <rect x="22" y="22" width="196" height="190" rx="9" fill="white" stroke="#e8c4bc" stroke-width="1.2"/>
+          <text x="120" y="48" text-anchor="middle" font-size="12" font-weight="500" fill="#2c2220">Key</text>
+          <ellipse cx="56" cy="84" rx="28" ry="17" fill="#3a6068"/>
+          <text x="96" y="79" font-size="10" fill="#5a4845">Human decision</text>
+          <text x="96" y="93" font-size="10" fill="#9a7c78">(editorial judgment)</text>
+          <ellipse cx="56" cy="126" rx="28" ry="17" fill="#c4975a"/>
+          <text x="96" y="129" font-size="10" fill="#5a4845">AI action</text>
+          <ellipse cx="56" cy="164" rx="28" ry="17" fill="#7aafb8"/>
+          <text x="96" y="167" font-size="10" fill="#5a4845">Automated / system</text>
+          <rect x="42" y="184" width="28" height="16" rx="4" fill="#4a154b" opacity="0.85"/>
+          <text x="56" y="195" text-anchor="middle" font-size="8" fill="white" font-weight="500">slack</text>
+          <text x="96" y="195" font-size="10" fill="#5a4845">Slack notification</text>
+          <!-- INFRASTRUCTURE BAND -->
+          <rect x="236" y="22" width="742" height="64" rx="9" fill="white" stroke="#e8c4bc" stroke-width="1" stroke-dasharray="5,3"/>
+          <text x="607" y="44" text-anchor="middle" font-size="9.5" font-weight="500" letter-spacing="0.13em" fill="#9a7c78">INFRASTRUCTURE</text>
+          <rect x="256" y="52" width="118" height="24" rx="5" fill="#f5e6e2" stroke="#e8c4bc" stroke-width="1"/>
+          <text x="315" y="68" text-anchor="middle" font-size="10" fill="#5a4845">Supabase (DB + Auth)</text>
+          <rect x="386" y="52" width="100" height="24" rx="5" fill="#f5e6e2" stroke="#e8c4bc" stroke-width="1"/>
+          <text x="436" y="68" text-anchor="middle" font-size="10" fill="#5a4845">Next.js (App)</text>
+          <rect x="498" y="52" width="100" height="24" rx="5" fill="#f5e6e2" stroke="#e8c4bc" stroke-width="1"/>
+          <text x="548" y="68" text-anchor="middle" font-size="10" fill="#5a4845">Vercel (Cron)</text>
+          <rect x="610" y="52" width="100" height="24" rx="5" fill="#faf0de" stroke="#c4975a" stroke-width="1"/>
+          <text x="660" y="68" text-anchor="middle" font-size="10" fill="#8b6b30">Claude API</text>
+          <rect x="722" y="52" width="90" height="24" rx="5" fill="#f0eaf5" stroke="#c9b8d8" stroke-width="1"/>
+          <text x="767" y="68" text-anchor="middle" font-size="10" fill="#4a154b">Slack</text>
+          <rect x="824" y="52" width="134" height="24" rx="5" fill="#f5e6e2" stroke="#e8c4bc" stroke-width="1"/>
+          <text x="891" y="68" text-anchor="middle" font-size="10" fill="#5a4845">Context Doc (Supabase)</text>
+          <!-- PIPELINE NODES -->
+          <ellipse cx="316" cy="194" rx="72" ry="32" fill="#7aafb8"/>
+          <text x="316" y="189" text-anchor="middle" fill="white">Vercel Cron</text>
+          <text x="316" y="205" text-anchor="middle" fill="white">triggers brief gen</text>
+          <ellipse cx="316" cy="302" rx="78" ry="32" fill="#c4975a"/>
+          <text x="316" y="297" text-anchor="middle" fill="white">AI generates</text>
+          <text x="316" y="313" text-anchor="middle" fill="white">content brief</text>
+          <ellipse cx="510" cy="302" rx="78" ry="32" fill="#3a6068"/>
+          <text x="510" y="297" text-anchor="middle" fill="white">Editor reviews</text>
+          <text x="510" y="313" text-anchor="middle" fill="white">brief</text>
+          <ellipse cx="710" cy="302" rx="78" ry="32" fill="#c4975a"/>
+          <text x="710" y="297" text-anchor="middle" fill="white">AI generates</text>
+          <text x="710" y="313" text-anchor="middle" fill="white">draft</text>
+          <ellipse cx="906" cy="302" rx="78" ry="32" fill="#3a6068"/>
+          <text x="906" y="297" text-anchor="middle" fill="white">Editor reviews</text>
+          <text x="906" y="313" text-anchor="middle" fill="white">&amp; edits draft</text>
+          <ellipse cx="906" cy="430" rx="78" ry="32" fill="#c4975a"/>
+          <text x="906" y="425" text-anchor="middle" fill="white">AI analyses</text>
+          <text x="906" y="441" text-anchor="middle" fill="white">edit diffs</text>
+          <ellipse cx="710" cy="430" rx="78" ry="32" fill="#7aafb8"/>
+          <text x="710" y="425" text-anchor="middle" fill="white">Publish queue</text>
+          <text x="710" y="441" text-anchor="middle" fill="white">markdown export</text>
+          <!-- Exemplar Store -->
+          <rect x="430" y="404" width="172" height="60" rx="9" fill="#faf0de" stroke="#c4975a" stroke-width="1.5"/>
+          <text x="516" y="428" text-anchor="middle" font-size="11" font-weight="500" fill="#8b6b30">Exemplar Store</text>
+          <text x="516" y="448" text-anchor="middle" font-size="9" fill="#c4975a" letter-spacing="0.08em">SUPABASE · FEW-SHOT POOL</text>
+          <!-- Slack node -->
+          <rect x="254" y="400" width="136" height="64" rx="9" fill="#f0eaf5" stroke="#c9b8d8" stroke-width="1.2"/>
+          <text x="322" y="424" text-anchor="middle" font-size="10" font-weight="500" fill="#4a154b">Slack</text>
+          <text x="322" y="442" text-anchor="middle" font-size="9.5" fill="#6b3fa0">Brief · Approve · Draft</text>
+          <text x="322" y="456" text-anchor="middle" font-size="9.5" fill="#6b3fa0">Edit · Publish</text>
+          <!-- ARROWS -->
+          <line x1="316" y1="226" x2="316" y2="270" stroke="#c4975a" stroke-width="1.6" marker-end="url(#s3-ai)"/>
+          <line x1="394" y1="302" x2="432" y2="302" stroke="#c9908a" stroke-width="1.5" marker-end="url(#s3-a)"/>
+          <line x1="588" y1="302" x2="632" y2="302" stroke="#c9908a" stroke-width="1.5" marker-end="url(#s3-a)"/>
+          <line x1="788" y1="302" x2="828" y2="302" stroke="#c9908a" stroke-width="1.5" marker-end="url(#s3-a)"/>
+          <line x1="906" y1="334" x2="906" y2="398" stroke="#c4975a" stroke-width="1.6" marker-end="url(#s3-ai)"/>
+          <line x1="828" y1="430" x2="788" y2="430" stroke="#c9908a" stroke-width="1.5" marker-end="url(#s3-a)"/>
+          <path d="M 906,462 C 906,504 666,490 602,462" stroke="#c4975a" stroke-width="1.4" fill="none" stroke-dasharray="5,3" marker-end="url(#s3-loop)"/>
+          <path d="M 430,434 C 372,490 316,500 316,334" stroke="#c4975a" stroke-width="1.5" fill="none" stroke-dasharray="5,3" marker-end="url(#s3-loop)"/>
+          <path d="M 891,76 C 891,112 396,112 394,282" stroke="#c9908a" stroke-width="1.2" fill="none" stroke-dasharray="4,3" marker-end="url(#s3-a)"/>
+          <path d="M 316,334 C 316,366 322,382 322,400" stroke="#7aafb8" stroke-width="1.3" fill="none" stroke-dasharray="4,3" marker-end="url(#s3-slack)"/>
+          <path d="M 510,270 C 510,228 430,210 394,206" stroke="#c9908a" stroke-width="1.2" fill="none" stroke-dasharray="4,3" marker-end="url(#s3-a)"/>
+          <text x="448" y="226" text-anchor="middle" font-size="9" fill="#9a7c78" font-style="italic">reject</text>
+          <text x="516" y="522" text-anchor="middle" font-size="9.5" fill="#c4975a" font-style="italic">Quality threshold met → editorial context updated</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+section {
+  background: var(--warm-white);
+}
+
+.section-intro {
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+  line-height: 1.85;
+  max-width: 580px;
+  margin-bottom: 4.5rem;
+  font-weight: 300;
+}
+
+.system {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.system-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.sys-num {
+  font-family: var(--serif);
+  font-size: 5rem;
+  font-weight: 300;
+  color: var(--rose-blush);
+  line-height: 1;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.sys-meta { padding-top: 0.5rem; }
+
+.sys-label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  margin-bottom: 0.2rem;
+}
+
+.sys-name-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sys-name {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.sys-sub {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.in-progress-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  border: 1px solid var(--rose-blush);
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  background: rgba(245, 230, 226, 0.5);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.diagram-block {
+  margin-top: 2.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(181, 112, 106, 0.07);
+}
+
+.diagram-label {
+  padding: 0.75rem 1.4rem;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.75);
+}
+
+.diagram-wrap {
+  background: var(--rose-whisper);
+  padding: 1.8rem 1.4rem;
+  overflow-x: auto;
+}
+
+.sys-divider {
+  max-width: 960px;
+  margin: 4.5rem auto;
+  height: 1px;
+  background: var(--border);
+}
+
+@media (max-width: 640px) {
+  .sys-num      { font-size: 3.2rem; }
+  .sys-name     { font-size: 1.5rem; }
+  .sys-name-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+}
+</style>

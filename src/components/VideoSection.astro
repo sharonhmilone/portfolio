@@ -1,0 +1,212 @@
+---
+// Video section — 3 Shift Tips YouTube cards (RAMP style)
+// Thumbnails pulled live from YouTube thumbnail API
+
+const videos = [
+  {
+    id:    "-HS3C9Kptm0",
+    title: "Shift Browser Tips to Master Your Productivity",
+    url:   "https://youtu.be/-HS3C9Kptm0",
+  },
+  {
+    id:    "dys2E5z-j9o",
+    title: "Watch This Before Accepting Your Browser Cookies",
+    url:   "https://youtu.be/dys2E5z-j9o",
+  },
+  {
+    id:    "wWYbEZHIZuk",
+    title: "Digital Burnout? How to Keep Your Sanity in an Online World",
+    url:   "https://youtu.be/wWYbEZHIZuk",
+  },
+];
+---
+
+<section id="watch">
+  <span class="section-label reveal">Video</span>
+  <h2 class="section-title reveal">
+    Watch the <em>work in action</em>
+  </h2>
+
+  <!-- Maiden name search note -->
+  <aside class="maiden-note reveal">
+    <p>
+      Much of my published writing and early career work appears under my maiden
+      name <strong>Sharon L. Hadden</strong>. A Google search of that name surfaces
+      many of my articles from Douglas Magazine, Databox and other outlets — the
+      full depth of the written record that doesn't show up under Milone.
+    </p>
+  </aside>
+
+  <!-- Video grid -->
+  <div class="video-grid">
+    {videos.map((v, i) => (
+      <a
+        href={v.url}
+        target="_blank"
+        rel="noopener"
+        class={`video-card reveal${i === 1 ? " delay-1" : i === 2 ? " delay-2" : ""}`}
+      >
+        <div class="thumb-wrap">
+          <img
+            src={`https://img.youtube.com/vi/${v.id}/maxresdefault.jpg`}
+            alt={v.title}
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="play-btn" aria-hidden="true">
+            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="21" stroke="white" stroke-opacity="0.85" stroke-width="1.5"/>
+              <polygon points="18,14 32,22 18,30" fill="white" fill-opacity="0.92"/>
+            </svg>
+          </div>
+        </div>
+        <div class="video-meta">
+          <span class="video-label">Shift Tips · YouTube</span>
+          <p class="video-title">{v.title}</p>
+          <span class="video-cta">Watch →</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+section {
+  background: var(--cream);
+}
+
+/* Maiden name note */
+.maiden-note {
+  background: var(--rose-whisper);
+  border-left: 3px solid var(--rose-blush);
+  padding: 1.2rem 1.6rem;
+  margin-bottom: 3rem;
+  max-width: 720px;
+}
+
+.maiden-note p {
+  font-size: 0.87rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.maiden-note strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Video grid — 3 columns */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Card */
+.video-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.22s, border-color 0.22s, box-shadow 0.22s;
+}
+
+.video-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--rose-blush);
+  box-shadow: 0 8px 28px rgba(181, 112, 106, 0.12);
+}
+
+/* Thumbnail */
+.thumb-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--dark-bg);
+}
+
+.thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  opacity: 0.92;
+}
+
+.video-card:hover .thumb-wrap img {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+/* Play button overlay */
+.play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 22, 20, 0.28);
+  transition: background 0.22s;
+}
+
+.video-card:hover .play-btn {
+  background: rgba(30, 22, 20, 0.42);
+}
+
+.play-btn svg {
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+  transition: transform 0.22s;
+}
+
+.video-card:hover .play-btn svg {
+  transform: scale(1.1);
+}
+
+/* Meta */
+.video-meta {
+  padding: 1.4rem 1.6rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.video-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.video-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.35;
+  flex: 1;
+}
+
+.video-cta {
+  margin-top: 0.6rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .video-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .video-grid { grid-template-columns: 1fr; }
+}
+</style>

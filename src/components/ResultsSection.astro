@@ -1,0 +1,232 @@
+---
+// Results & Impact — Sama (featured/dark), C2FO, Fundbox
+---
+
+<section id="results">
+  <span class="section-label">Results &amp; Impact</span>
+  <h2 class="section-title reveal">A career built on <em>measurable outcomes</em></h2>
+  <p class="results-intro reveal">
+    From doubling organic traffic to earning an industry award — these are the
+    numbers and moments that define the work.
+  </p>
+
+  <div class="results-grid">
+
+    <!-- Sama — featured dark card (award, no metric stat) -->
+    <div class="rcard rcard--featured reveal">
+      <div class="rcard-inner">
+        <div class="rcard-left">
+          <span class="rcard-company">Sama (Samasource)</span>
+          <h3 class="rcard-title">Award-winning AI case study</h3>
+          <p class="rcard-body">
+            Built the content program that helped Sama communicate the complexity
+            and value of machine learning data labelling to enterprise buyers. Led
+            development of a customer advocacy content series — the Vulcan wildlife
+            conservation story — that earned Sama recognition at the 2020 AI
+            Breakthrough Awards.
+          </p>
+          <a
+            href="https://www.sama.com/blog/how-vulcan-is-using-ai-for-wildlife-conservation"
+            target="_blank"
+            rel="noopener"
+            class="rcard-link"
+          >
+            Read the case study →
+          </a>
+        </div>
+        <div class="rcard-award">
+          <span class="award-label">Award Winner</span>
+          <p class="award-name">2020 AI Breakthrough Award</p>
+          <span class="award-org">Artificial Intelligence<br/>Breakthrough Awards</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- C2FO -->
+    <div class="rcard reveal delay-1">
+      <span class="rcard-stat">2×</span>
+      <span class="rcard-company">C2FO · Working Capital Platform</span>
+      <h3 class="rcard-title">Organic search doubled in 12 months</h3>
+      <p class="rcard-body">
+        Led topic cluster strategy that grew organic traffic from 15% to 32% of
+        all site visits, overtaking email as the top channel. Individual articles
+        moved from single-digit daily visits to 30–60+ with featured snippets on
+        high-intent financial search terms.
+      </p>
+    </div>
+
+    <!-- Fundbox -->
+    <div class="rcard reveal delay-2">
+      <span class="rcard-stat">49%</span>
+      <span class="rcard-company">Fundbox · SMB FinTech</span>
+      <h3 class="rcard-title">Social-to-blog traffic lift</h3>
+      <p class="rcard-body">
+        Consolidated 20+ independent contributors into a streamlined in-house
+        content studio. 113 posts in 9 months, 49% lift in social-to-blog traffic
+        and a +91 position jump on a primary keyword.
+      </p>
+      <p class="rcard-note">
+        Built before AI-assisted production. Pure editorial systems thinking.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+section {
+  background: var(--cream);
+}
+
+.results-intro {
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+  line-height: 1.85;
+  max-width: 540px;
+  margin-bottom: 3.5rem;
+  font-weight: 300;
+}
+
+/* Grid: featured card spans full width on top, two stat cards below */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  max-width: 960px;
+}
+
+/* Base card */
+.rcard {
+  background: var(--warm-white);
+  padding: 2.8rem 2.6rem;
+  transition: background 0.2s ease;
+}
+.rcard:hover { background: var(--rose-whisper); }
+
+/* Featured card spans both columns */
+.rcard--featured {
+  grid-column: 1 / -1;
+  background: var(--dark-bg);
+  color: #f5ede9;
+}
+.rcard--featured:hover { background: var(--dark-mid); }
+
+.rcard-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: start;
+}
+
+.rcard-left { max-width: 600px; }
+
+/* Stat number (C2FO, Fundbox) */
+.rcard-stat {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 300;
+  color: var(--rose-blush);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.rcard-company {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose-mid);
+  margin-bottom: 0.9rem;
+}
+.rcard--featured .rcard-company { color: rgba(232, 196, 188, 0.65); }
+
+.rcard-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 0.8rem;
+}
+.rcard--featured .rcard-title { color: #f5ede9; }
+
+.rcard-body {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.82;
+  font-weight: 300;
+}
+.rcard--featured .rcard-body { color: rgba(245, 237, 233, 0.72); }
+
+.rcard-note {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-family: var(--serif);
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.rcard-link {
+  display: inline-block;
+  margin-top: 1.4rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rose-mid);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 144, 138, 0.4);
+  padding-bottom: 0.15rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+.rcard-link:hover { color: var(--rose-blush); border-color: var(--rose-blush); }
+
+/* Award box */
+.rcard-award {
+  border: 1px solid rgba(201, 144, 138, 0.25);
+  background: rgba(181, 112, 106, 0.1);
+  padding: 1.8rem 1.6rem;
+  text-align: center;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.award-label {
+  display: block;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-mid);
+  margin-bottom: 0.8rem;
+}
+
+.award-name {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 300;
+  color: #f5ede9;
+  line-height: 1.25;
+  margin-bottom: 0.7rem;
+}
+
+.award-org {
+  display: block;
+  font-size: 0.65rem;
+  color: rgba(245, 237, 233, 0.45);
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .results-grid { grid-template-columns: 1fr; }
+  .rcard-inner  { grid-template-columns: 1fr; gap: 1.8rem; }
+  .rcard-award  { min-width: unset; }
+}
+</style>
