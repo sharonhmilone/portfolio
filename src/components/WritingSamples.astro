@@ -1,51 +1,28 @@
 ---
-// Writing samples — published articles + multimedia
-// Sama case study lives in Results section; this is the full writing record.
+// Writing & Work — combined articles + multimedia grid
+// Items: Douglas Magazine article, Sama interview, Christopher Pommerening interview
 
-const articles = [
+const pieces = [
   {
-    pub:   "Douglas Magazine",
-    title: "Creating Content: Five Steps for an Intentional Online Content Strategy",
-    url:   "https://www.douglasmagazine.com/creating-content-five-steps-for-an-intentional-online-content-strategy/",
+    eyebrow: "Article · Douglas Magazine",
+    title:   "Creating Content: Five Steps for an Intentional Online Content Strategy",
+    desc:    "A practical guide to building a content strategy with intention, written for a general business audience.",
+    url:     "https://www.douglasmagazine.com/creating-content-five-steps-for-an-intentional-online-content-strategy/",
+    cta:     "Read Article →",
   },
   {
-    pub:   "Digital Entrepreneur",
-    title: "I Woke Up a B Corp and Other World-Changing Views",
-    url:   "https://www.digitalentrepreneur.com/explore/i-woke-up-a-b-corp-and-other-world-changing-views",
+    eyebrow: "Interview · Samasource (Sama)",
+    title:   "8 Answers to Your Questions About AI and Machine Learning",
+    desc:    "An accessible primer on AI and ML for a non-technical business audience, part of Samasource's content program to build authority in the data labelling space.",
+    url:     "https://www.sama.com/blog/8-answers-to-your-questions-about-ai-and-machine-learning",
+    cta:     "Listen Now →",
   },
   {
-    pub:   "Digital Entrepreneur",
-    title: "What's the Big Idea? London Tech Week 2025",
-    url:   "https://www.digitalentrepreneur.com/explore/whats-the-big-idea-london-tech-week-2025",
-  },
-  {
-    pub:   "iFundWomen",
-    title: "Social Media for Your Crowdfunding Campaign",
-    url:   "https://www.ifundwomen.com/social-media-for-your-crowdfunding",
-  },
-];
-
-const multimedia = [
-  {
-    type:  "Interview · Digital Entrepreneur",
-    title: "Changing the Way We Learn with Christopher Pommerening",
-    desc:  "A conversation with the Co-Founder of LearnLife on purpose-inspired learning. Conducted and published as Editor in Chief of Digital Entrepreneur.",
-    url:   "https://www.digitalentrepreneur.com/explore/changing-the-way-we-learn-with-christopher-pommerening",
-    cta:   "Read Interview →",
-  },
-  {
-    type:  "Video · Digital Entrepreneur",
-    title: "Creative Routes: Unlock Creativity Through Unlearning",
-    desc:  "Directed and oversaw production of this video, the first in Digital Entrepreneur's video series. The host was a local high school student passionate about the arts, a deliberate editorial choice.",
-    url:   "https://youtu.be/KL1cqQyU0pI",
-    cta:   "Watch Video →",
-  },
-  {
-    type:  "Explainer · Samasource (Sama)",
-    title: "8 Answers to Your Questions About AI and Machine Learning",
-    desc:  "An accessible explainer on AI and ML written for a non-technical audience, part of Samasource's content program to build brand authority in the data labelling space.",
-    url:   "https://www.sama.com/blog/8-answers-to-your-questions-about-ai-and-machine-learning",
-    cta:   "Read Article →",
+    eyebrow: "Interview · Digital Entrepreneur",
+    title:   "Changing the Way We Learn with Christopher Pommerening",
+    desc:    "A conversation with the Co-Founder of LearnLife on purpose-inspired learning. Conducted and published as Editor in Chief of Digital Entrepreneur.",
+    url:     "https://www.digitalentrepreneur.com/explore/changing-the-way-we-learn-with-christopher-pommerening",
+    cta:     "Listen Now →",
   },
 ];
 ---
@@ -59,33 +36,20 @@ const multimedia = [
     written, edited or directed with a clear editorial purpose.
   </p>
 
-  <!-- ── PUBLISHED ARTICLES ── -->
-  <div class="sub-section reveal">
-    <span class="sub-label">Published Articles</span>
-    <div class="article-grid">
-      {articles.map((a) => (
-        <a href={a.url} target="_blank" rel="noopener" class="article-card">
-          <span class="article-pub">{a.pub}</span>
-          <p class="article-title">{a.title}</p>
-          <span class="article-cta">Read Article →</span>
-        </a>
-      ))}
-    </div>
-  </div>
-
-  <!-- ── MULTIMEDIA ── -->
-  <div class="sub-section reveal">
-    <span class="sub-label">Multimedia</span>
-    <div class="media-grid">
-      {multimedia.map((m) => (
-        <a href={m.url} target="_blank" rel="noopener" class="media-card">
-          <span class="media-type">{m.type}</span>
-          <p class="media-title">{m.title}</p>
-          <p class="media-desc">{m.desc}</p>
-          <span class="media-cta">{m.cta}</span>
-        </a>
-      ))}
-    </div>
+  <div class="pieces-grid">
+    {pieces.map((p, i) => (
+      <a
+        href={p.url}
+        target="_blank"
+        rel="noopener"
+        class={`piece-card reveal${i === 1 ? " delay-1" : i === 2 ? " delay-2" : ""}`}
+      >
+        <span class="piece-eyebrow">{p.eyebrow}</span>
+        <p class="piece-title">{p.title}</p>
+        <p class="piece-desc">{p.desc}</p>
+        <span class="piece-cta">{p.cta}</span>
+      </a>
+    ))}
   </div>
 
 </section>
@@ -101,59 +65,42 @@ section {
   line-height: 1.85;
   max-width: 520px;
   font-weight: 300;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
-/* ── Sub-section label ── */
-.sub-section {
-  margin-bottom: 3.5rem;
-}
-
-.sub-label {
-  display: block;
-  font-size: 0.6rem;
-  font-weight: 500;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--border);
-}
-
-/* ── Article grid ── */
-.article-grid {
+/* Uniform 3-column grid */
+.pieces-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
-.article-card {
+.piece-card {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1.8rem 2rem;
+  gap: 0.7rem;
+  padding: 2.2rem 2rem;
   background: var(--cream);
+  border: 1px solid var(--border);
   text-decoration: none;
   border-top: 2px solid transparent;
   transition: border-color 0.22s, background 0.22s, transform 0.22s;
 }
-.article-card:hover {
-  border-color: var(--rose-deep);
-  background: var(--warm-white);
-  transform: translateY(-2px);
+
+.piece-card:hover {
+  border-top-color: var(--rose-deep);
+  background: var(--rose-whisper);
+  transform: translateY(-3px);
 }
 
-.article-pub {
+.piece-eyebrow {
   font-size: 0.6rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
 
-.article-title {
+.piece-title {
   font-family: var(--serif);
   font-size: 1.15rem;
   font-weight: 400;
@@ -162,75 +109,26 @@ section {
   flex: 1;
 }
 
-.article-cta {
-  margin-top: 0.6rem;
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--rose-deep);
-}
-
-/* ── Multimedia grid ── */
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.media-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding: 2rem 1.8rem;
-  background: var(--cream);
-  text-decoration: none;
-  border: 1px solid var(--border);
-  transition: background 0.22s, border-color 0.22s, transform 0.22s;
-}
-.media-card:hover {
-  background: var(--rose-whisper);
-  border-color: var(--rose-blush);
-  transform: translateY(-2px);
-}
-
-.media-type {
-  font-size: 0.58rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-
-.media-title {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--ink);
-  line-height: 1.3;
-}
-
-.media-desc {
+.piece-desc {
   font-size: 0.84rem;
   color: var(--ink-soft);
   line-height: 1.72;
   font-weight: 300;
-  flex: 1;
 }
 
-.media-cta {
+.piece-cta {
   margin-top: 0.4rem;
   font-size: 0.65rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--rose-deep);
 }
 
-/* Responsive */
 @media (max-width: 860px) {
-  .media-grid { grid-template-columns: 1fr 1fr; }
+  .pieces-grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 560px) {
-  .article-grid { grid-template-columns: 1fr; }
-  .media-grid   { grid-template-columns: 1fr; }
+@media (max-width: 520px) {
+  .pieces-grid { grid-template-columns: 1fr; }
 }
 </style>

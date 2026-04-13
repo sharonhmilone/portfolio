@@ -17,16 +17,16 @@ export const config = {
   nav: {
     name: "Sharon Hadden Milone",
     links: [
-      { href: "#systems", label: "Systems" },
-      { href: "#results", label: "Results" },
-      { href: "#writing", label: "Writing" },
-      { href: "#watch",   label: "Watch" },
       { href: "#about",   label: "About" },
+      { href: "#writing", label: "Writing" },
+      { href: "#results", label: "Results" },
+      { href: "#systems", label: "Systems" },
+      { href: "#watch",   label: "Watch" },
     ],
   },
 
   hero: {
-    eyebrow: "Content Systems Portfolio",
+    eyebrow: "Content Futurist & Editorial Leader",
     headline: "Sharon Hadden Milone",
     tagline:  "Building what's next in content, tech and AI",
   },
