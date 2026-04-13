@@ -21,7 +21,6 @@ export const config = {
       { href: "#writing", label: "Writing" },
       { href: "#results", label: "Results" },
       { href: "#systems", label: "Systems" },
-      { href: "#watch",   label: "Watch" },
     ],
   },
 
